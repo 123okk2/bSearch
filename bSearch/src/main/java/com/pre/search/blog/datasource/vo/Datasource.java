@@ -41,10 +41,11 @@ public class Datasource {
 	private String protocol;
 	
 	// API 주소
-	@Column(name="host", nullable=false, columnDefinition="VARCHAR(50)")
+	@Column(name="host", nullable=false, columnDefinition="VARCHAR(100)")
 	private String host;
 	
-	@Column(name="method", nullable=false, columnDefinition="VARCHAR(50)")
+	// API의 HTTP METHOD
+	@Column(name="method", nullable=false, columnDefinition="VARCHAR(10)")
 	private String method;
 	
 	// API 포트
@@ -52,7 +53,7 @@ public class Datasource {
 	private Integer port;
 	
 	// API PATH (/로 시작)
-	@Column(name="path", nullable=true, columnDefinition="VARCHAR(255)")
+	@Column(name="path", nullable=true, columnDefinition="VARCHAR(100)")
 	private String path;
 	
 	// OFFSET MIN/MAX

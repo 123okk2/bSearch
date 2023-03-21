@@ -1,5 +1,7 @@
 package com.pre.search.blog.common.vo;
 
+import java.io.Serializable;
+
 import org.springframework.http.HttpStatus;
 
 import lombok.Data;
@@ -14,7 +16,8 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class ResponseVO {
+public class ResponseVO implements Serializable {
+	private static final long serialVersionUID = -2929789292155268166L;
 	// http 결과 status
 	private HttpStatus status;
 	// http 결과 메시지 반환

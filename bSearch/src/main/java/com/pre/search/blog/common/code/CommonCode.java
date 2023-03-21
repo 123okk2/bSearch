@@ -29,12 +29,8 @@ public class CommonCode {
 	public final static String SORT_ACC = "sortAcc";
 	// 결과 페이지 번호
 	public final static String OFFSET = "offset";
-	public final static String OFFSET_MAX = "offsetMax";
-	public final static String OFFSET_MIN = "offsetMin";
 	// 한 페이지에 보여질 문서 수
 	public final static String LIMIT = "limit";
-	public final static String LIMIT_MAX = "limitMax";
-	public final static String LIMIT_MIN = "limitMin";
 	
 	// 2-2. RESPONSE 데이터
 	public final static String META = "meta";

@@ -42,7 +42,7 @@ public class DatasourceResponseParam {
 	private String column;
 	
 	@Id
-	@Column(name="id", nullable=false, columnDefinition="VARCHAR(50)")
+	@Column(name="id", nullable=false, columnDefinition="VARCHAR(20)")
 	private String id;
 	
 	@Column(name="sourceColumn", nullable=false, columnDefinition="VARCHAR(50)")

@@ -36,7 +36,7 @@ public class DatasourceHeader {
 	private String header;
 	
 	@Id
-	@Column(name="id", nullable=false, columnDefinition="VARCHAR(50)")
+	@Column(name="id", nullable=false, columnDefinition="VARCHAR(20)")
 	private String id;
 	
 	@Column(name="val", nullable=false, columnDefinition="VARCHAR(50)")
