@@ -27,6 +27,8 @@ public class CommonCode {
 	// 결과 문서 정렬 방식 - recency / accuracy
 	public final static String SORT_REC = "sortRec";
 	public final static String SORT_ACC = "sortAcc";
+	public final static String ACC = "acc";
+	public final static String REC = "rec";
 	// 결과 페이지 번호
 	public final static String OFFSET = "offset";
 	// 한 페이지에 보여질 문서 수

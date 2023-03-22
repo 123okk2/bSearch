@@ -122,20 +122,26 @@ public class SearchService {
 
 				String sortBy = null;
 				// SORT BY ACCURACY일 경우
-				if (queryVO.getSort().equals(CommonCode.SORT_ACC)
+				if (queryVO.getSort().equals(CommonCode.ACC)
 						&& null != datasourceVO.getRequestColumn(CommonCode.SORT_ACC)) {
 					sortBy = datasourceVO.getRequestColumn(CommonCode.SORT_ACC);
 				} 
 				// SORT BY RECENCEY일 경우
-				else if (queryVO.getSort().equals(CommonCode.SORT_REC)
+				else if (queryVO.getSort().equals(CommonCode.REC)
 						&& null != datasourceVO.getRequestColumn(CommonCode.SORT_REC)) {
 					sortBy = datasourceVO.getRequestColumn(CommonCode.SORT_REC);
 				}
 
-				if (sortBy != null) {
-					targetUrl.append("&").append(datasourceVO.getRequestColumn(CommonCode.SORT)).append("=")
-							.append(sortBy);
+				if (sortBy == null) {
+					// 존재하지 않는 정렬 기준 : 400
+					log.warn("@@ SearchService.search failed : {}", NO_DATASOURCE_EXISTS);
+					response.setStatus(HttpStatus.BAD_REQUEST);
+					response.setMessage(NOT_VALID_DATA);
+					
+					return response;
 				}
+				targetUrl.append("&").append(datasourceVO.getRequestColumn(CommonCode.SORT)).append("=")
+				.append(sortBy);
 			}
 			
 			// OFFSET & LIMIT 지정
@@ -264,8 +270,8 @@ public class SearchService {
 		
 		// NOT-REQUIRED 항목 검사
 		// CommonCode는 acc, rec 중 하나.
-		if(!ValidateUtil.isValidString(queryVO.getSort())) {
-			if(!queryVO.getSort().equals(CommonCode.SORT_ACC) && !queryVO.getSort().equals(CommonCode.SORT_REC)) {
+		if(ValidateUtil.isValidString(queryVO.getSort())) {
+			if(!queryVO.getSort().equals(CommonCode.ACC) && !queryVO.getSort().equals(CommonCode.REC)) {
 				return false;
 			}
 		}
