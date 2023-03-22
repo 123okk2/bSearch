@@ -2,6 +2,8 @@
 
 검색 API 구현
 
+executable jar 파일 다운로드 : https://drive.google.com/file/d/1XmRlbLCmV7cTVA9CHs1llvP2F6Bi_md2/view?usp=sharing
+
 ## DB 구조
 ![image](https://user-images.githubusercontent.com/51351974/226681733-bcc7aabd-a693-4b7b-a9ce-043d7655f20e.png)
 
